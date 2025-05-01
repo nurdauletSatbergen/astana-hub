@@ -1,9 +1,25 @@
-<div class="w-full max-w-7xl mx-auto py-5">
-  <form  [formGroup]="form" (ngSubmit)="onSubmit()">
-    <input class="border" formControlName="title">
-    <input class="border" formControlName="description">
-    <input class="border" formControlName="author_name">
+<form  [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="w-full max-w-7xl mx-auto px-4 py-5 grid grid-cols-1 gap-5">
+      <input class="border rounded me-2 border-gray-400 px-2 py-1.5 placeholder:text-gray-400"
+             formControlName="title"
+             placeholder="Post title"
+      >
+      <textarea class="border rounded me-2 border-gray-400 px-2 py-1.5 placeholder:text-gray-400"
+                formControlName="description"
+                placeholder="Post description"
+      >
+      </textarea
+      >
+      <input class="border rounded me-2 border-gray-400 px-2 py-1.5 placeholder:text-gray-400"
+             formControlName="author_name"
+             placeholder="Post author"
+      >
 
-    <button type="submit">Submit</button>
-  </form>
-</div>
+    <p>
+      <button class="inline-block bg-indigo-600 text-white py-1.5 px-6 rounded cursor-pointer"
+              type="submit">
+        Submit
+      </button>
+    </p>
+  </div>
+</form>

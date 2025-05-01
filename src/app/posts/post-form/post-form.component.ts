@@ -16,9 +16,9 @@ export class PostFormComponent {
   onAdd = output<CreatePostCredentials>();
 
   form = this.fb.nonNullable.group({
-    title: ['London is the capitol of GB', [Validators.required, Validators.minLength(5)]],
-    description: ['Placeholder text for post description', Validators.required],
-    author_name: ['Harry Potter', Validators.required]
+    title: ['', [Validators.required, Validators.minLength(5)]],
+    description: ['', Validators.required],
+    author_name: ['', Validators.required]
   })
 
   onSubmit(): void {

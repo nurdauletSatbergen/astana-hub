@@ -1,10 +1,13 @@
 <app-post-form (onAdd)="addPost($event)"></app-post-form>
 
-<div class="w-full max-w-7xl mx-auto">
-  <input class="border" [(ngModel)]="searchText">
+<div class="w-full max-w-7xl mx-auto px-4">
+  <input class="w-full border rounded me-2 border-gray-400 px-2 py-1.5 placeholder:text-gray-400"
+         [(ngModel)]="searchText"
+         placeholder="Search..."
+  >
 </div>
 
-<div class="w-full max-w-7xl mx-auto grid grid-cols-4 gap-5 py-5">
+<div class="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 py-5 px-4">
   @for (post of posts() | filterByName: searchText(); track post.id) {
     <app-post-card [post]="post"
                    (onLike)="like($event)"
