@@ -1,0 +1,9 @@
+<div class="w-full max-w-7xl mx-auto py-5">
+  <form  [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input class="border" formControlName="title">
+    <input class="border" formControlName="description">
+    <input class="border" formControlName="author_name">
+
+    <button type="submit">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,23 @@
+<div class="bg-white rounded-sm border border-gray-300 p-4 flex flex-col gap-3">
+  <h2 class="text-lg font-semibold text-gray-900">{{ post().title }}</h2>
+  <p class="text-sm text-gray-700">{{ post().description }}</p>
+  <div class="text-xs text-gray-500">
+    Автор: {{ post().author_name }} · {{ post().created_at | date:'mediumDate' }}
+  </div>
+
+  <div class="flex items-center justify-between mt-2">
+    <button
+      class="flex items-center gap-1 text-pink-600 hover:text-pink-800 transition"
+      (click)="onLike.emit(post().id)"
+    >
+      ❤️ <span>{{ post().likes_count }}</span>
+    </button>
+
+    <button
+      class="cursor-pointer text-red-500 hover:text-red-700 text-sm"
+      (click)="onRemove.emit(post().id)"
+    >
+      Удалить
+    </button>
+  </div>
+</div>
