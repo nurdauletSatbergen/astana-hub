@@ -2,8 +2,6 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
 import { Post } from '../post.model';
 import { DatePipe } from '@angular/common';
 
-
-
 @Component({
   selector: 'app-post-card',
   imports: [

@@ -11,6 +11,8 @@
   @for (post of posts() | filterByName: searchText(); track post.id) {
     <app-post-card [post]="post"
                    (onLike)="like($event)"
-                   (onRemove)="remove($event)"/>
+                   (onRemove)="remove($event)"
+                   [@fadeInOut]
+    />
   }
 </div>

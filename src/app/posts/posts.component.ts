@@ -1,10 +1,11 @@
-import {ChangeDetectionStrategy, Component, inject, model, signal} from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, model } from '@angular/core';
 import { CreatePostCredentials } from './post.model';
 import { PostFormComponent } from './post-form/post-form.component';
 import { PostsService } from './posts.service';
 import { PostCardComponent } from './post-card/post-card.component';
 import { FilterByNamePipe } from '../shared/pipes/filter-by-name.pipe';
 import { FormsModule } from '@angular/forms';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-posts',
@@ -16,6 +17,18 @@ import { FormsModule } from '@angular/forms';
   ],
   templateUrl: './posts.component.html',
   styleUrl: './posts.component.scss',
+  animations: [
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(-10%)' }),
+        animate('200ms ease-out', style({ opacity: 1, transform: 'translateY(0)' })),
+      ]),
+      transition(':leave', [
+        style({ opacity: 1, transform: 'translateY(0)'  }),
+        animate('150ms ease-in', style({ opacity: 0, transform: 'translateY(-10%)'  }))
+      ]),
+    ])
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PostsComponent {
