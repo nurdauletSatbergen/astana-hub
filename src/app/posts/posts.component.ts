@@ -3,7 +3,7 @@ import { CreatePostCredentials } from './post.model';
 import { PostFormComponent } from './post-form/post-form.component';
 import { PostsService } from './posts.service';
 import { PostCardComponent } from './post-card/post-card.component';
-import { FilterByNamePipe } from '../shared/pipes/filter-by-name.pipe';
+import { FilterByTitlePipe } from '../shared/pipes/filter-by-title.pipe';
 import { FormsModule } from '@angular/forms';
 import { animate, style, transition, trigger } from '@angular/animations';
 
@@ -12,7 +12,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
   imports: [
     PostFormComponent,
     PostCardComponent,
-    FilterByNamePipe,
+    FilterByTitlePipe,
     FormsModule
   ],
   templateUrl: './posts.component.html',
