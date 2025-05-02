@@ -8,7 +8,7 @@
   >
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 py-5">
-    @for (post of posts() | filterByName: searchText(); track post.id) {
+    @for (post of posts() | filterByTitle: searchText(); track post.id) {
       <app-post-card [post]="post"
                      (onLike)="like($event)"
                      (onRemove)="remove($event)"
