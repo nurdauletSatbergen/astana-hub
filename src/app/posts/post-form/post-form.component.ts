@@ -8,7 +8,6 @@ import { CreatePostCredentials } from '../post.model';
     ReactiveFormsModule
   ],
   templateUrl: './post-form.component.html',
-  styleUrl: './post-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PostFormComponent {
@@ -24,5 +23,6 @@ export class PostFormComponent {
   onSubmit(): void {
     if (this.form.invalid) return;
     this.onAdd.emit(this.form.getRawValue());
+    this.form.reset();
   }
 }
