@@ -5,14 +5,14 @@
          [(ngModel)]="searchText"
          placeholder="Search..."
   >
-</div>
 
-<div class="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 py-5 px-4">
-  @for (post of posts() | filterByName: searchText(); track post.id) {
-    <app-post-card [post]="post"
-                   (onLike)="like($event)"
-                   (onRemove)="remove($event)"
-                   [@fadeInOut]
-    />
-  }
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 py-5">
+    @for (post of posts() | filterByName: searchText(); track post.id) {
+      <app-post-card [post]="post"
+                     (onLike)="like($event)"
+                     (onRemove)="remove($event)"
+                     [@fadeInOut]
+      />
+    }
+  </div>
 </div>

@@ -9,6 +9,9 @@ import { DatePipe } from '@angular/common';
   ],
   templateUrl: './post-card.component.html',
   styleUrl: './post-card.component.scss',
+  host: {
+    class: 'bg-white rounded-sm border border-gray-300 p-4 flex flex-col gap-3'
+  },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PostCardComponent {
