@@ -16,7 +16,6 @@ import { animate, style, transition, trigger } from '@angular/animations';
     FormsModule
   ],
   templateUrl: './posts.component.html',
-  styleUrl: './posts.component.scss',
   animations: [
     trigger('fadeInOut', [
       transition(':enter', [

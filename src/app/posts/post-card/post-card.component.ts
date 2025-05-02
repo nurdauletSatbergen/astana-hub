@@ -8,7 +8,6 @@ import { DatePipe } from '@angular/common';
     DatePipe
   ],
   templateUrl: './post-card.component.html',
-  styleUrl: './post-card.component.scss',
   host: {
     class: 'bg-white rounded-sm border border-gray-300 p-4 flex flex-col gap-3'
   },
